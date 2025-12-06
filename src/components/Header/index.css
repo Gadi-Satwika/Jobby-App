@@ -1,0 +1,42 @@
+.navBarContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 15vh;
+  background-color: #272727;
+}
+
+.appLogo {
+  width: 10vw;
+  height: 7vh;
+}
+
+.navBarLists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 12vw;
+  font-size: 18px;
+  color: #ffffff;
+  font-family: 'Roboto';
+  list-style-type: none;
+}
+
+.homeTabs {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logoutButton {
+  background-color: #6366f1;
+  color: #ffffff;
+  width: 10vw;
+  height: 6vh;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
