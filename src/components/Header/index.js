@@ -7,7 +7,7 @@ class Header extends Component {
   logOutButton = () => {
     const propsData = this.props
     const {history} = propsData
-    Cookies.remove('jwtToken')
+    Cookies.remove('jwt_token')
     history.replace('/login')
   }
 
@@ -15,11 +15,13 @@ class Header extends Component {
     return (
       <nav className="navBarContainer">
         <div className="appLogoContainer">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-            alt="website logo"
-            className="appLogo"
-          />
+          <Link to="/">
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+              alt="website logo"
+              className="appLogo"
+            />
+          </Link>
         </div>
         <ul className="navBarLists">
           <Link to="/" className="homeTabs">
@@ -28,16 +30,16 @@ class Header extends Component {
           <Link to="/jobs" className="homeTabs">
             <li>Jobs</li>
           </Link>
+          <li className="logoutButtonContainer">
+            <button
+              type="button"
+              className="logoutButton"
+              onClick={this.logOutButton}
+            >
+              LogOut
+            </button>
+          </li>
         </ul>
-        <div className="logoutButtonContainer">
-          <button
-            type="button"
-            className="logoutButton"
-            onClick={this.logOutButton}
-          >
-            LogOut
-          </button>
-        </div>
       </nav>
     )
   }

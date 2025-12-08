@@ -1,0 +1,78 @@
+.jobCardContainer {
+  border-radius: 10px;
+  background-color: #202020;
+  width: 65vw;
+  list-style-type: none;
+  margin-bottom: 3vh;
+  padding: 10px 25px 10px 25px;
+}
+
+.companyLogoContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25vw;
+}
+
+.companyLogo {
+  width: 5vw;
+  height: 12vh;
+}
+
+.companyNameAndRating {
+  color: white;
+}
+
+.title {
+  font-size: 22px;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 3vw;
+}
+
+.locationAndSalary {
+  display: flex;
+  justify-content: space-around;
+  width: 60vw;
+  color: white;
+}
+
+.locationAndType {
+  display: flex;
+  width: 20vw;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8vw;
+}
+
+.employmentType {
+  display: flex;
+  width: 8vw;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.employmentTypeIcon {
+  flex-shrink: 0;
+}
+
+.descriptionHeading {
+  font-size: 20px;
+  color: white;
+}
+
+.description {
+  font-size: 17px;
+  color: white;
+  width: 55vw;
+}

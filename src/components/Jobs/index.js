@@ -1,9 +1,20 @@
 import {Component} from 'react'
 import {BsSearch} from 'react-icons/bs'
 import Cookies from 'js-cookie'
-import Header from '../Header'
+import Loader from 'react-loader-spinner'
 
+import Header from '../Header'
+import Profile from '../Profile'
+import JobCard from '../JobCard'
 import './index.css'
+
+const modes = {
+  success: 'SUCCESS',
+  failure: 'FAILURE',
+  inProgress: 'IN-PROGRESS',
+  initial: 'INITIAL',
+  notFound: 'NotFound',
+}
 
 const employmentTypesList = [
   {
@@ -45,35 +56,15 @@ const salaryRangesList = [
 
 class Jobs extends Component {
   state = {
-    profileDetails: [],
-    employmentType: [],
+    employmentType: '',
     salary: '',
     searchInputUser: '',
+    jobs: [],
+    jobStatus: modes.initial,
   }
 
   componentDidMount() {
-    this.getProfileDetails()
-  }
-
-  getProfileDetails = async () => {
-    const api = 'https://apis.ccbp.in/profile'
-    const jwtToken = Cookies.get('jwtToken')
-    const options = {
-      headers: {
-        Authorization: `Bearer ${jwtToken}`,
-      },
-      method: 'GET',
-    }
-    const response = await fetch(api, options)
-    const data = await response.json()
-    const updatedData = {
-      name: data.profile_details.name,
-      profileImageUrl: data.profile_details.profile_image_url,
-      shortBio: data.profile_details.short_bio,
-    }
-    this.setState({
-      profileDetails: updatedData,
-    })
+    this.getJobRecommendations()
   }
 
   getEmploymentType = event => {
@@ -116,12 +107,22 @@ class Jobs extends Component {
     }
   }
 
+  getUserSearch = event => {
+    this.setState({
+      searchInputUser: event.target.value,
+    })
+  }
+
   getJobRecommendations = async () => {
+    this.setState({
+      jobStatus: modes.inProgress,
+    })
     const {employmentType, salary, searchInputUser} = this.state
     console.log(searchInputUser)
-    const employmentTypeSelected = employmentType.join(',')
+    const employmentTypeSelected =
+      employmentType !== '' ? employmentType.join(',') : ''
     const api = `https://apis.ccbp.in/jobs?employment_type=${employmentTypeSelected}&minimum_package=${salary}&search=${searchInputUser}`
-    const jwtToken = Cookies.get('jwtToken')
+    const jwtToken = Cookies.get('jwt_token')
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -131,40 +132,111 @@ class Jobs extends Component {
     const response = await fetch(api, options)
     if (response.ok === true) {
       const data = await response.json()
-      console.log(data)
+      console.log(data.jobs.length)
+      if (data.jobs.length === 0) {
+        this.setState({
+          jobStatus: modes.notFound,
+        })
+      } else {
+        const updatedData = data.jobs.map(eachJob => ({
+          companyLogoUrl: eachJob.company_logo_url,
+          employmentType: eachJob.employment_type,
+          jobDescription: eachJob.job_description,
+          location: eachJob.location,
+          packagePerAnnum: eachJob.package_per_annum,
+          rating: eachJob.rating,
+          title: eachJob.title,
+          id: eachJob.id,
+        }))
+        this.setState({
+          jobs: updatedData,
+          jobStatus: modes.success,
+        })
+      }
     } else {
-      console.log('Got error')
+      this.setState({
+        jobStatus: modes.failure,
+      })
     }
-  }
-
-  getUserSearch = event => {
-    this.setState({
-      searchInputUser: event.target.value,
-    })
   }
 
   getRecommedationsForUserSearch = () => {
     this.getJobRecommendations()
   }
 
-  render() {
-    const {profileDetails, employmentType} = this.state
-    console.log(employmentType)
-    const {name, profileImageUrl, shortBio} = profileDetails
+  renderNotFoundView = () => (
+    <div className="failureView">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
+        alt="no jobs"
+      />
+      <h1 className="failureHeading">No Jobs Found</h1>
+      <p className="failureText">
+        We could not find any jobs. Try other filters.
+      </p>
+    </div>
+  )
+
+  renderLoaderView = () => (
+    <div className="loader-container-jobs" data-testid="loader">
+      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
+    </div>
+  )
+
+  renderFailureView = () => (
+    <div className="failureView">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+        alt="failure view"
+      />
+      <h1 className="failureHeading">Oops! Something Went Wrong</h1>
+      <p className="failureText">
+        We cannot seem to find the page you are looking for
+      </p>
+      <button
+        type="button"
+        className="retryButton"
+        onClick={this.getJobRecommendations}
+      >
+        Retry
+      </button>
+    </div>
+  )
+
+  renderSuccessView = () => {
+    const {jobs} = this.state
     return (
-      <div>
+      <ul className="eachJobDetailsContainer">
+        {jobs.map(eachJob => (
+          <JobCard jobDetails={eachJob} key={eachJob.id} />
+        ))}
+      </ul>
+    )
+  }
+
+  renderJobs = () => {
+    const {jobStatus} = this.state
+    switch (jobStatus) {
+      case modes.inProgress:
+        return this.renderLoaderView()
+      case modes.success:
+        return this.renderSuccessView()
+      case modes.failure:
+        return this.renderFailureView()
+      case modes.notFound:
+        return this.renderNotFoundView()
+      default:
+        return null
+    }
+  }
+
+  render() {
+    return (
+      <div className="totalPage">
         <Header />
         <div className="jobsPageContainer">
           <div className="profileBarContainer">
-            <div className="profileContainer">
-              <img
-                src={profileImageUrl}
-                alt="profile"
-                className="profileImage"
-              />
-              <h1 className="userName">{name}</h1>
-              <p className="shortBio">{shortBio}</p>
-            </div>
+            <Profile />
             <hr className="hrLine" />
             <h1 className="typesOfEmploymentHeading">Type of Employment</h1>
             <ul className="employmentTypeListContainer">
@@ -207,20 +279,20 @@ class Jobs extends Component {
               <input
                 type="search"
                 className="searchBar"
-                placeholder="Search"
+                placeholder="search"
+                role="searchbox"
                 onChange={this.getUserSearch}
               />
               <button
                 type="button"
                 data-testid="searchButton"
                 onClick={this.getRecommedationsForUserSearch}
+                className="searchIconButton"
               >
                 <BsSearch className="searchIcon" />
               </button>
             </div>
-            <div className="eachJobDetailsContainer">
-              <p>EachJob</p>
-            </div>
+            {this.renderJobs()}
           </div>
         </div>
       </div>

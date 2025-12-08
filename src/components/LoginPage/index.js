@@ -31,7 +31,7 @@ class LoginPage extends Component {
     const data = await response.json()
     console.log(data)
     if (response.ok === true) {
-      Cookies.set('jwtToken', data.jwt_token, {expires: 30})
+      Cookies.set('jwt_token', data.jwt_token, {expires: 30})
       const {history} = this.props
       history.replace('/')
     } else {
@@ -44,7 +44,7 @@ class LoginPage extends Component {
 
   render() {
     const {username, password, errorMsg, error} = this.state
-    const jwtToken = Cookies.get('jwtToken')
+    const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
     }
@@ -73,7 +73,7 @@ class LoginPage extends Component {
             PASSWORD
           </label>
           <input
-            type="text"
+            type="password"
             id="password"
             className="inputFields"
             placeholder="Password"

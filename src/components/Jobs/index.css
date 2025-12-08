@@ -1,8 +1,12 @@
+.totalPage {
+  background-color: #000000;
+  width: 100vw;
+}
+
 .jobsPageContainer {
   display: flex;
-  align-items: center;
-  width: 100vw;
-  background-color: #000000;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .profileBarContainer {
@@ -11,37 +15,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  flex-grow: 1;
-}
-
-.profileContainer {
-  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
-  background-size: cover;
-  width: 26vw;
-  height: 48vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-left: 2vw;
-  padding-top: 3vh;
-  margin-top: 5vh;
-}
-
-.profileImage {
-  width: 7vw;
-  height: 15vh;
-}
-
-.userName {
-  font-size: 30px;
-  color: #6366f1;
-  font-family: 'Roboto';
-}
-
-.shortBio {
-  color: #2c364c;
-  font-size: 18px;
-  width: 25vw;
+  width: 30vw;
 }
 
 .employmentTypeListContainer {
@@ -72,8 +46,11 @@
 .jobDetailsContainer {
   display: flex;
   flex-direction: column;
-  flex-grow: 5;
-  height: 100vh;
+  align-items: flex-start;
+}
+
+.eachJobDetailsContainer {
+  width: 60vw;
 }
 
 .searchContainer {
@@ -83,6 +60,8 @@
   width: 20vw;
   height: 5vh;
   border: 1px solid white;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
 }
 
 .searchBar {
@@ -96,11 +75,36 @@
   padding-left: 5px;
 }
 
-.eachJobDetailsContainer {
-  flex-grow: 5;
+.searchIconButton {
+  background-color: #202020;
+  color: white;
 }
 
 .searchIcon {
   height: 3vh;
   width: 3vw;
+}
+
+.failureView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+}
+
+.failureHeading {
+  color: white;
+}
+
+.failureText {
+  color: #bcbcbc;
+}
+
+.loader-container-jobs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 60vw;
 }
