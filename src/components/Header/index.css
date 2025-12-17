@@ -1,0 +1,125 @@
+.navBarContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 15vh;
+  background-color: #272727;
+}
+
+.appLogo {
+  width: 10vw;
+  height: 7vh;
+}
+
+.navBarLists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20vw;
+  font-size: 18px;
+  color: #ffffff;
+  font-family: 'Roboto';
+  list-style-type: none;
+}
+.navBarListsExtraSmall {
+  display: none;
+}
+
+.homeTabs {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 2vw;
+}
+
+.homeTabs {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logoutButton {
+  background-color: #6366f1;
+  color: #ffffff;
+  width: 10vw;
+  height: 6vh;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logoutButtonExtra {
+  display: none;
+}
+
+.homeSmall {
+  display: none;
+}
+
+.navIcon {
+  display: none;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.logoutIcon {
+  display: none;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 767px) {
+  .navBarContainer {
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 12vh;
+  }
+
+  .appLogo {
+    width: 120px;
+    height: auto;
+  }
+
+  .navBarLists {
+    width: auto;
+  }
+
+  .homeLarge,
+  .jobsLarge,
+  .logoutButtonLarge {
+    display: none;
+  }
+
+  .navIcon,
+  .logoutIcon {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .appLogo {
+    width: 100px;
+  }
+
+  .navBarLists {
+    gap: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .navBarContainer {
+    height: 20vh;
+  }
+  .homeLarge,
+  .jobsLarge,
+  .logoutButtonLarge {
+    display: inline;
+  }
+  .navIcon,
+  .logoutIcon {
+    display: none;
+  }
+}

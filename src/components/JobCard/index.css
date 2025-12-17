@@ -1,0 +1,164 @@
+.jobCardContainer {
+  border-radius: 10px;
+  background-color: #202020;
+  width: 65vw;
+  list-style-type: none;
+  margin-bottom: 3vh;
+  padding: 10px 25px 10px 25px;
+}
+
+.companyLogoContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25vw;
+}
+
+.companyLogo {
+  width: 5vw;
+  height: 12vh;
+}
+
+.companyNameAndRating {
+  color: white;
+}
+
+.title {
+  font-size: 22px;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 3vw;
+}
+
+.locationAndSalary {
+  display: flex;
+  justify-content: space-around;
+  width: 60vw;
+  color: white;
+}
+
+.locationAndType {
+  display: flex;
+  width: 20vw;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8vw;
+}
+
+.employmentType {
+  display: flex;
+  width: 8vw;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.employmentTypeIcon {
+  flex-shrink: 0;
+}
+
+.descriptionHeading {
+  font-size: 20px;
+  color: white;
+}
+
+.description {
+  font-size: 17px;
+  color: white;
+  width: 55vw;
+}
+
+@media screen and (max-width: 425px) {
+  .jobCardContainer {
+    width: 80vw;
+  }
+  .companyLogoContainer {
+    width: 65vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 2vw;
+  }
+  .companyLogo {
+    width: 10vw;
+    height: 5vh;
+    flex-grow: 0.5;
+  }
+  .rating {
+    margin-top: -2vh;
+    align-items: center;
+  }
+  .ratingIcon {
+    flex-shrink: 0;
+    flex-grow: 1;
+  }
+  .title {
+    font-size: 25px;
+  }
+  .locationAndSalary {
+    width: 80vw;
+  }
+  .locationAndType {
+    width: 60vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .location {
+    width: 20vw;
+    margin-left: 3vw;
+  }
+  .employmentType {
+    margin-left: 8vw;
+    width: 20vw;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .jobCardContainer {
+    width: 80vw;
+  }
+  .locationAndSalary {
+    width: 65vw;
+  }
+  .locationAndType {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+  }
+  .employmentType {
+    margin-left: 5vw;
+  }
+  .icons {
+    flex-shrink: 0;
+    flex-grow: 1;
+  }
+  .rating {
+    margin-top: -2vh;
+    align-items: center;
+  }
+  .ratingIcon {
+    flex-shrink: 0;
+    flex-grow: 1;
+  }
+  .title {
+    width: 40vw;
+  }
+  .companyLogoContainer {
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 2vw;
+  }
+}

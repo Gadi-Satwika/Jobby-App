@@ -1,0 +1,113 @@
+.totalLoginPage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.loginForm {
+  background-color: #272727;
+  border-radius: 5px;
+  padding: 3vh 3vw 3vh 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35vw;
+  height: 73vh;
+  line-height: 8vh;
+  color: #ffffff;
+}
+
+.formAppLogo {
+  width: 12vw;
+  height: 8vh;
+  margin-bottom: 3vh;
+  margin-top: 2vh;
+}
+
+.labelName {
+  color: #f8fafc;
+  font-size: 16px;
+  align-self: flex-start;
+}
+
+.inputFields {
+  border: 1px solid #64748b;
+  background-color: transparent;
+  border-radius: 3px;
+  width: 25vw;
+  height: 7vh;
+  align-self: flex-start;
+  padding-left: 1vw;
+  color: #ffffff;
+}
+
+.formLoginButton {
+  background-color: #4f46e5;
+  color: #ffffff;
+  border-radius: 7px;
+  height: 7vh;
+  width: 25vw;
+  border: none;
+  font-size: 18px;
+  font-family: 'Roboto';
+  align-self: flex-start;
+  margin-top: 5vh;
+  font-weight: bold;
+  cursor: pointer;
+}
+.errorMessage {
+  color: red;
+}
+
+.errorDisplayContainer {
+  height: 3vh;
+}
+
+@media screen and (max-width: 450px) {
+  .loginForm {
+    width: 80vw;
+    height: 65vh;
+  }
+  .formAppLogo {
+    width: 30vw;
+    height: 7vh;
+  }
+  .inputFields {
+    width: 60vw;
+    height: 12vh;
+  }
+  .labelName {
+    font-size: 13px;
+  }
+  .formLoginButton {
+    width: 59vw;
+    height: 12vh;
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 770px) {
+  .loginForm {
+    width: 50vw;
+    height: 65vh;
+  }
+  .formAppLogo {
+    width: 18vw;
+    height: 8vh;
+  }
+  .inputFields {
+    width: 40vw;
+    height: 8vh;
+  }
+  .labelName {
+    font-size: 12px;
+  }
+  .formLoginButton {
+    width: 40vw;
+    height: 8vh;
+    font-size: 12px;
+  }
+}
+

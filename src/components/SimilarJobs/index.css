@@ -1,0 +1,77 @@
+.similarJobCompanyLogoContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25vw;
+}
+
+.similarJobsList {
+  border-radius: 10px;
+  background-color: #202020;
+  width: 30vw;
+  list-style-type: none;
+  margin-bottom: 3vh;
+  padding: 10px 25px 10px 25px;
+}
+
+.locationAndType {
+  display: flex;
+  width: 20vw;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8vw;
+  color: white;
+}
+
+.employmentType {
+  display: flex;
+  width: 8vw;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.descriptionSimilarJob {
+  width: 25vw;
+  color: white;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px) {
+  .title {
+    font-size: 20px;
+  }
+  .similarJobsList {
+    width: 70vw;
+  }
+  .descriptionSimilarJob {
+    width: 70vw;
+    font-size: 20px;
+  }
+  .descriptionHeading {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .title {
+    font-size: 20px;
+  }
+  .similarJobsList {
+    width: 70vw;
+  }
+  .descriptionSimilarJob {
+    width: 50vw;
+    font-size: 16px;
+  }
+  .descriptionHeading {
+    font-size: 18px;
+  }
+}
