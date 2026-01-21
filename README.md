@@ -22,13 +22,13 @@ This project focuses on API integration, routing, authentication, and frontend a
 
 ### 🛠️ Tech Stack
 
-Frontend: React.js
-Routing: React Router
-Authentication: JWT
-API Integration: REST APIs
-Styling: CSS / Styled Components
-State Management: React Context API
-Version Control: Git & GitHub
+- Frontend: React.js
+- Routing: React Router
+- Authentication: JWT
+- API Integration: REST APIs
+- Styling: CSS / Styled Components
+- State Management: React Context API
+- Version Control: Git & GitHub
 
 ### 🧩 Application Routes
 
@@ -42,24 +42,24 @@ All protected routes are secured using JWT authentication.
 
 ### 📂 Project Highlights
 
-Modular and reusable React components
-Clean folder structure
-Data rendering using APIs
-Filters and search applied in real time
-Proper loading and failure views
-Fully handwritten implementation
+- Modular and reusable React components
+- Clean folder structure
+- Data rendering using APIs
+- Filters and search applied in real time
+- Proper loading and failure views
+- Fully handwritten implementation
 
 ### 🔮 Future Enhancements
 
-Save jobs functionality
-User profile page
-Pagination or infinite scrolling
-Improved accessibility
+- Save jobs functionality
+- User profile page
+- Pagination or infinite scrolling
+- Improved accessibility
 
 Check it out: [JobbyApp](https://satwikajobapp.ccbp.tech/)
 
-👨‍💻 Author
+## 👨‍💻 Author
 
-Gadi Satwika
-Aspiring Developer | React.js
-GitHub: [Click here] (https://github.com/Gadi-Satwika)
+### Gadi Satwika
+### Aspiring Developer | React.js
+### GitHub: [Click here] (https://github.com/Gadi-Satwika)
