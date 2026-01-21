@@ -6,23 +6,19 @@ The application fetches job data from APIs and allows users to search, filter, a
 This project focuses on API integration, routing, authentication, and frontend architecture, and is completely handwritten and built from scratch.
 
 ### 🚀 Features
--- 🔐 JWT-based Authentication - Secure login & Logout functionality
--- Protected routes using React Router
--- 🔎 Job Search - Keyword-based job search
--- 🎯 Advanced Filters
-  - Filter by Employment Type
-  - Filter by Salary Range
--- 📄 Job Listings
-  - Fetches and displays jobs from APIs
-  - Clean and structured job cards
--- 🧾 Job Details Page
+- 🔐 JWT-based Authentication - Secure login & Logout functionality
+- Protected routes using React Router
+-  🔎 Job Search - Keyword-based job search
+-  🎯 Advanced Filters -> Filter by Employment Type & Filter by Salary Range
+-  � Job Listings -  Fetches and displays jobs from APIs & Clean and structured job cards
+- 🧾 Job Details Page
   - Detailed job description
   - Company information
   - Skills required
   - Similar / related jobs section
--- 📱 Fully Responsive Design
+-📱 Fully Responsive Design
   - Optimized for desktop, tablet, and mobile screens
--- 🚫 Not Found Page - Graceful handling of invalid routes
+- 🚫 Not Found Page - Graceful handling of invalid routes
 
 ### 🛠️ Tech Stack
 
