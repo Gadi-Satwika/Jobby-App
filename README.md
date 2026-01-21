@@ -32,11 +32,11 @@ Version Control: Git & GitHub
 
 ### 🧩 Application Routes
 
-/login – User login
-/home - displays home page
-/jobs – Job listings with search and filters
-/jobs/:id – Job details and similar jobs
-/not-found – Invalid route handling
+- /login – User login
+- /home - displays home page
+- /jobs – Job listings with search and filters
+- /jobs/:id – Job details and similar jobs
+- /not-found – Invalid route handling
 
 All protected routes are secured using JWT authentication.
 
