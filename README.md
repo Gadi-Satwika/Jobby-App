@@ -60,7 +60,7 @@ User profile page
 Pagination or infinite scrolling
 Improved accessibility
 
-Check it out: [Jobby App] (https://satwikajobapp.ccbp.tech/)
+Check it out: [JobbyApp](https://satwikajobapp.ccbp.tech/)
 
 👨‍💻 Author
 
